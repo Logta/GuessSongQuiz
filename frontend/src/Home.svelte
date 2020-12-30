@@ -1,9 +1,10 @@
 
 <script>
 	import {checkFileTypeCSV, parseCSV} from "./helper.ts"
+	import AnswerTable from "./AnswerTable.svelte"
 	let csv = "";
 
-	function setFile(event) {
+	const setFile = (event) => {
 		 
 		var file = event.target.files[0];
 		var reader = new FileReader();
@@ -46,7 +47,7 @@
 		<h3>計算</h3>
 		<button on:click={onCalc}>計算開始</button>
 	</div>
-	{csv}
+  	<AnswerTable answers={csv} />
 </div>
 
 <style>
