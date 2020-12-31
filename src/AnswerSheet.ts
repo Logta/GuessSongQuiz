@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Answer } from "./Answer"
 import { removeDoubleQuotes } from "./Helper"
 
