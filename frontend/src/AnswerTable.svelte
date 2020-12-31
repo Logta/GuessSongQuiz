@@ -1,6 +1,7 @@
 <script>
 	import AnswerHeader from "./AnswerHeader.svelte";
 	import AnswerRow from "./AnswerRow.svelte";
+	import AnswerFooter from "./AnswerFooter.svelte";
 	export let answers;
 </script>
 
@@ -29,7 +30,7 @@
 					{/if}
 				{/each}
 			</tbody>
+			<AnswerFooter footer={answers.getCorrect('ok')} />
 		</table>
-		{answers}
 	{/if}
 </div>

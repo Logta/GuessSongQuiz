@@ -2,6 +2,7 @@
 	import { checkFileTypeCSV, parseAnswer } from "./Helper.ts";
 	import AnswerTable from "./AnswerTable.svelte";
 	import { AnswerSheet } from "./AnswerSheet.ts";
+	import ScoreBook from "./ScoreBook.svelte";
 	let csv = "";
 	let answerSheet = undefined;
 
@@ -31,6 +32,7 @@
 
 		answerSheet = new AnswerSheet();
 		answerSheet.setAnswers(answers);
+		answerSheet.calcScore("ok");
 	};
 </script>
 
@@ -71,4 +73,5 @@
 		<button on:click={onCalc}>計算開始</button>
 	</div>
 	<AnswerTable answers={answerSheet} />
+	<ScoreBook scores={answerSheet} />
 </div>

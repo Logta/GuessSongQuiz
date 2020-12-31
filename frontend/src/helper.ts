@@ -20,3 +20,7 @@ const swapAnswersFromCSV = (str: string[]): Answer => {
     let answer = new Answer(str[1], str.slice(2));
     return answer;
 }
+
+export const removeDoubleQuotes = (str: string): string =>{
+    return str.replace(/[\"]/g, '');
+}
