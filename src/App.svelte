@@ -43,15 +43,6 @@
 </style>
 
 <main>
-	{#if !firebaseConfig.projectId}
-		<strong>Step 0</strong>
-		Create a
-		<a href="https://firebase.google.com/">Firebase Project</a>
-		and paste your web config into
-		<code>App.svelte</code>
-		.
-	{/if}
-
 	<!-- 1. 🔥 Firebase App -->
 	<FirebaseApp {firebase}>
 		<Home />

@@ -24,9 +24,11 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "firebase": "^8.2.1",
     "fs": "^0.0.1-security",
     "rollup-plugin-includepaths": "^0.2.4",
     "sirv-cli": "^1.0.0",
-    "smelte": "^1.0.18"
+    "smelte": "^1.0.18",
+    "sveltefire": "^0.1.5"
   }
 }
