@@ -24,23 +24,16 @@
 		margin: 0 auto;
 	}
 
-	h1,
-	em {
-		color: #ff3e00;
-	}
-
-	hr {
-		height: 1px;
-		border: none;
-		background: rgb(195, 195, 195);
-	}
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
 	}
 </style>
+
+<svelte:head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</svelte:head>
 
 <main>
 	<!-- 1. 🔥 Firebase App -->

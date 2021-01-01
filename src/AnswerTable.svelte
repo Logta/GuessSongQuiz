@@ -2,11 +2,13 @@
 	import AnswerHeader from "./AnswerHeader.svelte";
 	import AnswerRow from "./AnswerRow.svelte";
 	import AnswerFooter from "./AnswerFooter.svelte";
+  	import { Table } from 'sveltestrap';
+
 	export let answers;
 </script>
 
 <style>
-	table {
+	.table {
 		border-collapse: collapse;
 		width: 100%;
 		border: 1px solid #333;
@@ -21,7 +23,7 @@
 
 <div id="answerTable">
 	{#if answers}
-		<table>
+		<Table class="table">
 			<AnswerHeader header={answers.getAnswers()[0].answer} />
 			<tbody>
 				{#each answers.getAnswers() as row, index}
@@ -31,6 +33,6 @@
 				{/each}
 			</tbody>
 			<AnswerFooter footer={answers.getCorrect('ok')} />
-		</table>
+		</Table>
 	{/if}
 </div>

@@ -1,4 +1,8 @@
 <script>
+	import {
+	  Button,
+	  Input
+	} from "sveltestrap";
 	import { checkFileTypeCSV, parseAnswer } from "./Helper.ts";
 	import AnswerTable from "./AnswerTable.svelte";
 	import { AnswerSheet } from "./AnswerSheet.ts";
@@ -37,6 +41,7 @@
 </script>
 
 <style>
+	@import 'bootstrap/dist/css/bootstrap.min.css';
 	div {
 		text-align: center;
 		padding: 1em;
@@ -48,11 +53,10 @@
 		color: #ff3e00;
 		text-transform: uppercase;
 		font-size: 4em;
-		font-weight: 100;
 	}
 
 	@media (min-width: 640px) {
-		main {
+		div {
 			max-width: none;
 		}
 	}
@@ -64,13 +68,13 @@
 	<h2>得点計算</h2>
 
 	<div>
-		<h3>ファイル指定</h3>
-		<input type="file" id="file" on:change={setFile} />
+		<h4>ファイル指定</h4>
+		<Input type="file" id="file" on:change={setFile} />
 	</div>
 
 	<div>
-		<h3>計算</h3>
-		<button on:click={onCalc}>計算開始</button>
+		<h4>計算</h4>
+		<Button color={"primary"} on:click={onCalc}>計算開始</Button>
 	</div>
 	<AnswerTable answers={answerSheet} />
 	<ScoreBook scores={answerSheet} />
