@@ -4,8 +4,7 @@
 </script>
 
 <style>
-	tfoot,
-	tr {
+	th {
 		width: 100%;
 		background-color: bisque;
 	}

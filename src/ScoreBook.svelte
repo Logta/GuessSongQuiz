@@ -1,5 +1,6 @@
 <script>
 	import ScoreRow from "./ScoreRow.svelte";
+	import ScoreHeader from "./ScoreHeader.svelte";
 	export let scores;
 	import { Table } from "sveltestrap";
 </script>
@@ -13,9 +14,11 @@
 		padding-top: 50px;
 	}
 	div {
-		border-collapse: collapse;
 		width: 60%;
 		min-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 	}
 </style>
 
@@ -23,8 +26,12 @@
 	{#if scores}
 		<div>
 			<Table bordered>
-				{#each scores.getScoreBoard('ok') as row}
-					<ScoreRow score={row} />
+				{#each scores.getScoreBoard('ok') as row, index}
+					{#if index != 0}
+						<ScoreRow score={row} />
+					{:else}
+						<ScoreHeader />
+					{/if}
 				{/each}
 			</Table>
 		</div>

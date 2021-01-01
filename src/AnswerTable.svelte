@@ -22,7 +22,7 @@
 
 <div id="answerTable">
 	{#if answers}
-		<Table>
+		<Table bordered>
 			<AnswerHeader header={answers.getAnswers()[0].answer} />
 			<tbody>
 				{#each answers.getAnswers() as row, index}

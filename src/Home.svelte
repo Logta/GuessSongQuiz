@@ -84,6 +84,7 @@
 		text-align: center;
 	}
 	div#answer {
+		padding-top: 50px;
 		width: 100%;
 		min-width: 360px;
 		margin-left: auto;
