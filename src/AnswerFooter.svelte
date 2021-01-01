@@ -13,9 +13,9 @@
 
 <tfoot>
 	<tr>
-		<td>正解</td>
+		<th>正解</th>
 		{#each footer as correct}
-			<td>{removeDoubleQuotes(correct)}</td>
+			<th>{removeDoubleQuotes(correct)}</th>
 		{/each}
 	</tr>
 </tfoot>

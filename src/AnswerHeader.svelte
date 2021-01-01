@@ -11,9 +11,9 @@
 
 <thead>
 	<tr>
-		<th style="width: {20}%;">回答者</th>
+		<th style="width: {10}%;">回答者</th>
 		{#each header as _, index}
-			<th style="width: {80 / header.length}%;">{index + 1}</th>
+			<th style="width: {90 / header.length}%;">{index + 1}</th>
 		{/each}
 	</tr>
 </thead>

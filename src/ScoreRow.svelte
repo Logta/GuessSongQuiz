@@ -6,9 +6,6 @@
 	tr {
 		width: 100%;
 	}
-	td {
-		border: 1px solid #333;
-	}
 </style>
 
 <tr>

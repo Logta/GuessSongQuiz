@@ -1,12 +1,17 @@
 <script>
 	import {
-	  Button,
-	  Input
+		Button,
+		FormGroup,
+		Label,
+		CustomInput,
+		Jumbotron,
 	} from "sveltestrap";
 	import { checkFileTypeCSV, parseAnswer } from "./Helper.ts";
 	import AnswerTable from "./AnswerTable.svelte";
 	import { AnswerSheet } from "./AnswerSheet.ts";
 	import ScoreBook from "./ScoreBook.svelte";
+
+	let filename = "";
 	let csv = "";
 	let answerSheet = undefined;
 
@@ -28,6 +33,7 @@
 
 		reader.addEventListener("load", function () {
 			csv = reader.result;
+			filename = file.name;
 		});
 	};
 
@@ -41,41 +47,77 @@
 </script>
 
 <style>
-	@import 'bootstrap/dist/css/bootstrap.min.css';
-	div {
+	@import "bootstrap/dist/css/bootstrap.min.css";
+	main {
 		text-align: center;
 		padding: 1em;
 		max-width: 100%;
-		margin: 0 auto;
 	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
+	h2 {
+		color: #000000;
+		font-weight: bold;
 	}
-
+	h4 {
+		padding-top: 10px;
+	}
 	@media (min-width: 640px) {
-		div {
+		main {
 			max-width: none;
 		}
 	}
+	div#form {
+		width: 50%;
+		min-width: 360px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	div#content {
+		width: 100%;
+		text-align: left;
+		margin-right: auto;
+	}
+	div#score {
+		width: 50%;
+		min-width: 360px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	div#answer {
+		width: 100%;
+		min-width: 360px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 </style>
 
-<div id="home">
-	<h1>曲あてクイズ</h1>
+<main>
+	<div id="form">
+		<div id="content">
+			<Jumbotron fluid class="p-3">
+				<h2>得点計算</h2>
+			</Jumbotron>
 
-	<h2>得点計算</h2>
+			<h4>ファイル指定</h4>
+			<FormGroup>
+				<CustomInput
+					type="file"
+					id="fileSelector"
+					name="customFile"
+					label={filename === '' ? '結果のCSVファイルを選択してください' : filename}
+					on:change={setFile} />
+			</FormGroup>
 
-	<div>
-		<h4>ファイル指定</h4>
-		<Input type="file" id="file" on:change={setFile} />
+			<h4>計算</h4>
+			<Button color={'primary'} on:click={onCalc}>計算開始</Button>
+		</div>
 	</div>
 
-	<div>
-		<h4>計算</h4>
-		<Button color={"primary"} on:click={onCalc}>計算開始</Button>
+	<div id="score">
+		<ScoreBook scores={answerSheet} />
 	</div>
-	<AnswerTable answers={answerSheet} />
-	<ScoreBook scores={answerSheet} />
-</div>
+
+	<div id="answer">
+		<AnswerTable answers={answerSheet} />
+	</div>
+</main>
