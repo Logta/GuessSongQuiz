@@ -13,11 +13,6 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	tbody {
-		background-color: #333;
-		width: 100%;
-		color: #fff;
-	}
 </style>
 
 <div id="answerTable">

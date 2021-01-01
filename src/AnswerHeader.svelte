@@ -6,6 +6,8 @@
 	thead,
 	tr {
 		width: 100%;
+		background-color: #333;
+		color: #fff;
 	}
 </style>
 
