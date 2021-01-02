@@ -28,6 +28,7 @@
     "firebase": "^8.2.1",
     "rollup-plugin-includepaths": "^0.2.4",
     "sirv-cli": "^1.0.0",
+    "svelte-spa-router": "^3.1.0",
     "sveltefire": "^0.1.5",
     "sveltestrap": "^3.10.0"
   }
