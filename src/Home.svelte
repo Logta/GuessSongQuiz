@@ -32,16 +32,16 @@
 		color:antiquewhite;
 	}
 	a{
-		padding-right: 10px;
-  position: relative;
-  top: 25%;
+		padding-right: 25px;
+		position: relative;
+		top: 25%;
 		color:antiquewhite;
 	}
 </style>
 
 <main>
 	<Navbar color="dark" dark expand="md">
-		<NavbarBrand href="/">曲あてクイズ</NavbarBrand>
+		<NavbarBrand><a href="/" use:link>曲あてクイズ</a></NavbarBrand>
 		<NavbarToggler on:click={() => (isOpen = !isOpen)} />
 		<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
 		  <Nav class="ml-auto" navbar>
@@ -49,12 +49,12 @@
 			  <a href="/point/" use:link>得点計算</a>
 			</NavItem>
 			<NavItem>
-			  <NavLink href="https://github.com/Logta/GuessSongQuiz">GitHub</NavLink>
+				<a href="https://github.com/Logta/GuessSongQuiz">GitHub</a>
 			</NavItem>
 		  </Nav>
 		</Collapse>
-	  </Navbar>
-	  <div id="home">
+	</Navbar>
+	<div id="home">
 		<Router {routes}/>
-	  </div>
+	</div>
 </main>
